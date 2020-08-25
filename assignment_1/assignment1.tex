@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1 in}
+
+
+\title{Assignment 1}
+\author{Mytraya Gattu, Roshni Singh, Ramakant Pal\\ 180050032, 18B030020, 180260028}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+Given that $\langle x^{\prime}|x \rangle = \delta(x^{\prime}-x)$, we can write the operator X in the position basis (its own eigenbasis) as:
+$$\langle x^{\prime} | X | x \rangle = x\delta\left(x^{\prime}-x\right)= x^{\prime}\delta\left(x^{\prime}-x\right)$$ We also take the canonical commutation relation as one of the postulates: $$\left[X,P\right] = \imath \hbar$$
+Now we can write:
+$$\langle x^{\prime} | \left[X,P\right] | x \rangle = \imath \hbar \delta\left(x^{\prime}-x\right)$$
+$$\implies \langle x^{\prime} | XP| x \rangle - \langle x^{\prime} | PX| x \rangle = \imath \hbar \delta\left(x^{\prime}-x\right)$$
+$$\implies x^{\prime}\langle x^{\prime} | P| x \rangle-x\langle x^{\prime} | P| x \rangle=\imath \hbar \delta\left(x^{\prime}-x\right)$$
+Therefore, 
+$$\langle x^{\prime} | P| x \rangle = \imath \hbar \frac{\delta\left(x^{\prime}-x\right)}{x^{\prime}-x} = -\imath \hbar \frac{d}{dx}\left(\delta \left(x-x^{\prime}\right) \right)$$
+\section*{Problem 2}
+In the ket representation, 
+$$\partial_{t} |\psi(t) \rangle = -\frac{\imath H(t)}{\hbar} | \psi (t) \rangle$$
+The wave function $\psi (x,t) $ is defined as $\langle x | \psi (t) \rangle$.
+Multiplying the equation by $\langle x|$ on both sides we get:
+$$\partial_{t} \langle x|\psi(t) \rangle = -\imath \langle x | \frac{H(t)}{\hbar} | \psi (t) \rangle$$
+$$\implies \partial_{t} \psi(x,t) = -\imath \langle x | \frac{H(t)}{\hbar} | \psi (t) \rangle$$
+We now insert the identity $\int dx^{\prime} | x^{\prime} \rangle \langle x^{\prime} | = 1$, to get
+$$\partial_{t}\psi(x,t)=-\frac{i}{\hbar}\int dx^{\prime} \langle x | H(t) | x^{\prime} \rangle \langle x^{\prime}|\psi (t) \rangle$$
+$$\implies \partial_{t}\psi(x,t)=-\frac{i}{\hbar}\int dx^{\prime} \psi(x^{\prime},t) \langle x | H(t) | x^{\prime} \rangle$$
+Now, we assume that $H(t)$ is given by $H(t) = \frac{P^2}{2m} + V$.
+$$ \langle x | H(t) | x^{\prime} \rangle =  \langle x | \frac{P^2}{2m} + V | x^{\prime} \rangle = \langle x | \frac{P^2}{2m}  | x^{\prime} \rangle + \langle x | V  | x^{\prime} \rangle$$
+We use the position space representation of  the momentum and potential operators to get:
+$$ \langle x | H(t) | x^{\prime} \rangle =  [-\hbar^2 \frac{\partial^2}{\partial x^2} + V(x) ] \delta(x-x^{\prime})$$
+
+
+Using this, therefore
+$$\partial_{t}\psi(x,t)=-\frac{i}{\hbar}\int dx^{\prime}  \psi (x^{\prime},t)  [-\hbar^2\frac{\partial^2}{\partial x^2} + V(x) ] \delta(x-x^{\prime})$$
+
+Therefore, we finally get:
+$$ -\frac{\hbar}{\imath}\frac{\partial}{\partial t}\psi(x,t) = (-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x))\psi(x,t)$$
+(Schrodinger's Equation)
+\section*{Problem 3}
+For a free non-relativistic particle, $$H(t) = \frac{P^2}{2m}$$
+Using the operator identity in the momentum space (taking the normalisation of plane wave states to be $\frac{1}{\sqrt{(2 \pi \hbar)^{D}}}$ in $D$ dimensions), we have
+$$ \langle x^{\prime} | e^{-\frac{\imath}{\hbar} Ht} | x \rangle = \int dp \langle x |p \rangle  \langle p | e^{-\frac{\imath}{2\hbar m}P^2t} | x^{\prime} \rangle $$
+Simplifying,
+$$ \langle x^{\prime} | e^{-\frac{\imath}{\hbar}Ht} | x \rangle = \int dp \frac{1}{2\pi\hbar} e^{\frac{i}{\hbar}p\left(x-x^{\prime}\right)-\frac{\imath}{2\hbar m}p^2t}$$
+(Since, $\langle x | p \rangle = \sqrt{\frac{1}{2\pi \hbar}}e^{\frac{\imath}{\hbar} p\cdot x}$) \newline
+Resolving the integral, (by completing the square in the exponent):
+$$ \langle x^{\prime} | e^{-\frac{\imath}{\hbar}Ht} | x \rangle =\sqrt{\frac{m}{2 \imath t \pi \hbar}} e^{\frac{i m (x-x^{\prime})^2}{2 \hbar t}}$$
+\subsection*{Working}
+The power of e is:
+$$
+-\frac{i}{\hbar}\left[\frac{p^{2} t}{2 m}-p\left(x-x^{\prime}\right)\right]
+$$
+Putting \( \alpha^{2}=\frac{t}{2 m} \), we get
+
+$$
+\frac{-i}{\hbar}\left[\alpha^{2} p^{2}-2(\alpha p) \frac{\left(x-x^{\prime}\right)}{2 \alpha}+\frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}\right]+\frac{i}{\hbar}\left[\frac{(x-x^{\prime})^2}{4 \alpha^{2}}\right]
+$$
+
+which can be written as:
+
+$$
+-\frac{i}{h} \quad\left(\alpha p-\frac{\left(x-x^{\prime}\right)}{2 \alpha}\right)^{2}+\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}
+$$
+
+Therefore we can rewrite the integral as:
+\( \left\langle x^{\prime}\left|e^{-\frac{\imath}{\hbar} H t}\right| x\right\rangle=\int d p \frac{1}{2 \pi \hbar}e^{-\frac{i}{h} \quad\left(\alpha p-\frac{\left(x-x^{\prime}\right)}{2 \alpha}\right)^{2}+\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}} \)
+
+Therefore, we can write our integral as,
+
+\( \left\langle x^{\prime}\left|e^{-\frac{\imath}{\hbar} H t}\right| x\right\rangle=\int d p \frac{1}{2 \pi \hbar} e^{-\frac{i}{h} \quad\left(\alpha p-\frac{\left(x-x^{\prime}\right)}{2 \alpha}\right)^{2}} e^{\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}} \)
+
+% \( \left\langle x^{\prime}\left|e^{-\frac{\imath}{\hbar} H t}\right| x\right\rangle=\int d p \frac{1}{2 \pi \hbar} e^{-\frac{i}{h} \quad\left(\alpha p-\frac{\left(x-x^{\prime}\right)}{2 \alpha}\right)^{2}} e^{\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}} \)
+
+\( \left\langle x^{\prime}\left|e^{-\frac{\imath}{\hbar} H t}\right| x\right\rangle= e^{\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}}  \frac{1}{2 \pi \hbar} \int d p e^{-\frac{i}{h} \quad\left(\alpha p-\frac{\left(x-x^{\prime}\right)}{2 \alpha}\right)^{2}}  \)
+
+
+The following is a standard integral,
+\[
+\int_{-\infty}^{\infty} d x e^{-i x^{2}}=\sqrt{-\imath \pi}
+\]
+
+Therefore we get,
+$$ \left\langle x^{\prime}\left|e^{-\frac{\imath}{\hbar} H t}\right| x\right\rangle= e^{\frac{i}{\hbar} \frac{\left(x-x^{\prime}\right)^{2}}{4 \alpha^{2}}}  \frac{1}{2 \pi \hbar} \frac{\sqrt{-\imath \pi}}{\alpha}  $$
+Putting the value of $\alpha^{2} = \frac{t}{2 m}$ , we get the result stated above.
+
+
+
+\end{document}

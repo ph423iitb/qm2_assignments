@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\geometry{margin=1 in}
+\title{Assignment 1}
+\author{Mytraya Gattu, Roshni Singh, Ramakant Pal\\ 180050032, 18B030020, 180260028}
+\date{\today}
+\begin{document}
+\maketitle
+The ladder operators are defined as
+$$L_{+} = L_{x} + \imath L_{y}$$
+$$L_{-} = L_{x} - \imath L_{y}$$
+\begin{align*}
+    L_{+}L_{z} & = L_{z}L_{+} + [L_{+},L_{z}] \\
+    & = L_{z}L_{+} + [L_{x},L_{z}] + \imath [L_{y},L_{z}] \\
+    & = L_{z}L_{+} + (-\imath \hbar L_{y}) + \imath (\imath \hbar L_{x}) \\
+    & = L_{z}L_{+} -\hbar (L_{x} + \imath L_{y} ) \\
+    & = L_{z}L_{+} -\hbar L_{+} \\
+    \left[L_{i},L_{j}\right] & =  \imath \hbar \epsilon_{ijk}L_{k}  \\
+\end{align*}
+Therefore,
+\begin{align*}
+    & L_{+}L_{z} | l,m \rangle  = L_{z}L_{+} | l,m \rangle - \hbar L_{+} | l,m \rangle \\
+    & \hbar mL_{+} | l,m \rangle + \hbar L_{+} | l,m \rangle = L_{z}L_{+} | l,m \rangle
+\end{align*}
+From the orthonormality of the vectors in the set $\bigcup_{i} \left\{|l,m_{i} \rangle \right\}$, we can conclude that
+$$L_{+} | l,m \rangle \propto |l, m+1 \rangle$$ and similarly,
+$$L_{+} | l,m \rangle \propto |l, m-1 \rangle$$
+Let,
+$$L_{+} | l,m \rangle = C^{+}_{l,m} | l,m+1 \rangle$$ and
+$$L_{-} | l,m \rangle = C^{-}_{l,m} | l,m-1 \rangle$$
+From this, we conclude that
+$$\langle l,m | L_{-}L_{+} | l,m \rangle = C^{-}_{l,m+1}C^{+}_{l,m}$$
+$$\langle l,m | L_{+}L_{-} | l,m \rangle = C^{+}_{l,m-1}C^{-}_{l,m}$$
+Also,
+\begin{align*}
+L_{-}L_{+} & = \left( L_{x} - \imath L_{y} \right)\left( L_{x} + \imath L_{y} \right) \\
+    & = L^{2}_{x} -\imath \left( L_{y}L_{x} - L_{x}L_{y}) \right) + L^{2}_{y} \\
+    & = L^{2}_{x} + L^{2}_{y} + L^{2}_{z} - L^{2}_{z} - \hbar L_{z} \\
+    & = L^{2} - L^{2}_{z} - \hbar L_{z}
+\end{align*}
+ Similarly,
+$$L_{+}L_{-} = L^{2} - L^{2}_{z} + \hbar L_{z} $$
+This implies,
+$$\langle l,m | L_{-}L_{+} | l, m \rangle = \hbar^{2} (l^{2} + l - m^{2} - m)$$
+$$\langle l,m | L_{+}L_{-} | l, m \rangle = \hbar^{2} (l^{2} + l - m^{2} + m)$$
+
+Since, $L^{\dagger}_{+} = L_{-}$, 
+\begin{align*}
+    L_{+} | l,m \rangle \leftrightarrow & \langle l,m | L^{\dagger}_{+} \\
+    & \langle l,m | L_{-} \\
+\end{align*}
+Hence,
+$$\langle l,m | L_{-}L_{+} | l,m \rangle = C^{-}_{l,m+1}C^{+}_{l,m} = C^{+ *}_{l,m}C^{+}_{l,m}$$
+$$\langle l,m | L_{+}L_{-} | l,m \rangle = C^{+}_{l,m-1}C^{-}_{l,m} = C^{- *}_{l,m}C^{-}_{l,m}$$
+Using the above relations, 
+$$C^{+}_{l,m} = e^{\imath \phi^{+}_{l,m}} \hbar \sqrt{l^{2}+l-m^{2}-m}$$
+$$C^{-}_{l,m} = e^{\imath \phi^{-}_{l,m}} \hbar \sqrt{l^{2}+l-m^{2}+m}$$
+Since, the phase carries no actual physical signficance, we set $\phi^{+}=\phi^{-}=0$.
+$$\langle l,m^{\prime} | L_{+} | l,m \rangle = \hbar \delta_{m+1,m^{\prime}} \sqrt{l^{2}+l-m^{2}-m}$$  
+$$\langle l,m^{\prime} | L_{-} | l,m \rangle = \hbar \delta_{m-1,m^{\prime}} \sqrt{l^{2}+l-m^{2}+m}$$
+It is also clear, from the derivation that $m$ ranges from $-l$ to $l$ in steps of $1$.
+Dimensionality of these matrices is therefore: $\left(2l+1\right)^{2}$
+Using the formulae for the matrix elements for $L_{+}$ and $L_{-}$ in matrix form, for \newline
+$l=\frac{1}{2}$: 
+$$L_{+}=\hbar \left(
+    \begin{array}{cc}
+     0 & 1 \\
+     0 & 0 \\
+    \end{array}
+    \right)
+$$
+$$L_{-}=\hbar \left(
+\begin{array}{cc}
+ 0 & 0 \\
+ 1 & 0 \\
+\end{array}
+\right)$$
+and for $l=1$:
+$$L_{+} = \hbar \left(
+    \begin{array}{ccc}
+     0 & \sqrt{2} & 0 \\
+     0 & 0 & \sqrt{2} \\
+     0 & 0 & 0 \\
+    \end{array}
+    \right)$$
+$$L_{-} = \hbar \left(
+    \begin{array}{ccc}
+     0 & 0 & 0 \\
+     \sqrt{2} & 0 & 0 \\
+     0 & \sqrt{2} & 0 \\
+    \end{array}
+    \right)$$
+From the definitions for $L_{+}$ and $L_{-}$, 
+$$L_{x} = \frac{1}{2} \left(L_{+} + L_{-}\right)$$
+$$L_{y} = \frac{1}{2 \imath} \left(L_{+} - L_{-}\right)$$
+Therefore, for $l=1/2$:
+$$L_{x} = \hbar \left(
+    \begin{array}{cc}
+     0 & \frac{1}{2} \\
+     \frac{1}{2} & 0 \\
+    \end{array}
+    \right) $$
+$$L_{y} = \hbar \left(
+    \begin{array}{cc}
+     0 & -\frac{i}{2} \\
+     \frac{i}{2} & 0 \\
+    \end{array}
+    \right) $$
+and for $l=1$:
+$$L_{x} = \hbar \left(
+    \begin{array}{ccc}
+     0 & \frac{1}{\sqrt{2}} & 0 \\
+     \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
+     0 & \frac{1}{\sqrt{2}} & 0 \\
+    \end{array}
+    \right)$$
+$$L_{y}=\hbar \left(
+    \begin{array}{ccc}
+     0 & -\frac{i}{\sqrt{2}} & 0 \\
+     \frac{i}{\sqrt{2}} & 0 & -\frac{i}{\sqrt{2}} \\
+     0 & \frac{i}{\sqrt{2}} & 0 \\
+    \end{array}
+    \right)$$
+$L_{z}$ can be found by $$L_{z} = -\frac{\imath}{\hbar} \left[L_{x},L_{y} \right]$$
+For $l=1$, 
+$$L_{z} = \hbar \left(
+    \begin{array}{ccc}
+     1 & 0 & 0 \\
+     0 & 0 & 0 \\
+     0 & 0 & -1 \\
+    \end{array}
+    \right)$$
+\end{document}
