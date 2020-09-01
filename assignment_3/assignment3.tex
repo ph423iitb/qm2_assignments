@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1 in}
+
+
+\title{Assignment 3}
+\author{Mytraya Gattu, Roshni Singh, Ramakant Pal\\ 180050032, 18B030020, 180260028}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\section*{\textbf{Addition of spins $j=\frac{1}{2}$ and $j=1$}}
+$|j_{1},j_{2};j,m\rangle$ basis kets are the eigen-kets of $J^2,J_{z},J_{1}^{2},J_{2}^{2}$. The defining equation for the Clebsch-Gordan coefficients is:
+\begin{align*}
+    |j_{1},j_{2};j,m\rangle & = \sum_{m_{1} m_{2}} \langle j_{1},j_{2}; m_{1},m_{2}|j_{1},j_{2};j,m\rangle | j_{1},j_{2};m_{1},m_{2} \rangle \\
+    & = \sum_{m_{1} m_{2}} C^{jm}_{m_{1} m_{2}}| j_{1},j_{2};m_{1},m_{2} \rangle
+\end{align*}
+% Considering the action of the operators($\hbar =1$)
+% \begin{align*}
+%     & J^{2}|j_{1},j_{2};j,m\rangle = \sum_{m_{1} m_{2}} C^{jm}_{m_{1} m_{2}}| j_{1},j_{2};m_{1},m_{2} \rangle \\
+%     & j(j+1)|j_{1},j_{2};j,m\rangle = \sum_{m_{1} m_{2}} C^{jm}_{m_{1} m_{2}}(J_{1}^{2} + J_{2}^{2} + 2J_{1 z}J_{2 z} + J_{1 +}J_{2 -} + J_{1 -}J_{2 +})| j_{1},j_{2};m_{1},m_{2} \rangle
+% \end{align*}
+% \begin{align*}
+%     (J_{1}^{2} + J_{2}^{2} +  2J_{1 z}J_{2 z} + J_{1 +}J_{2 -} + J_{1 -}J_{2 +})| & j_{1},j_{2};j,m \rangle =  \sum_{m_{1} m_{2}} C^{jm}_{m_{1} m_{2}} \left( j_{1}(j_{1}+1) + j_{2}(j_{2} + 1) + 2m_{1}m_{2}\right) | j_{1},j_{2};m_{1},m_{2} \rangle + \\ 
+%      & \sqrt{\left(j_{1}(j_{1}+1)-m_{1}(m_{1}+1)\right)\left(j_{2}(j_{2}+1)-m_{2}(m_{2}-1)\right)} | j_{1},j_{2};m_{1}+1,m_{2}-1 \rangle + \\ & \sqrt{\left(j_{1}(j_{1}+1)-m_{1}(m_{1}-1)\right)\left(j_{2}(j_{2}+1)-m_{2}(m_{2}+1)\right)} | j_{1},j_{2};m_{1}-1,m_{2}+1 \rangle
+% \end{align*}
+
+% \begin{align*}
+%    J_{z} | j_{1},j_{2};j,m \rangle & =  m \, | j_{1},j_{2};j,m \rangle \\
+%    & =  \sum_{m_{1} m_{2}}C^{j m}_{m_{1} m_{2}} \left( J_{1 z} + J_{2 z}\right) |j_{1},j_{2};m_{1} m_{2} \rangle \\ 
+%    & =  \sum_{m_{1} m_{2}}C^{j m}_{m_{1} m_{2}} \left( m_{1} + m_{2}\right) |j_{1},j_{2};m_{1} m_{2} \rangle
+% \end{align*}
+% % From the above equation, $m=m_{1}+m_{2}$. Starting with the maximum $m=\frac{3}{2}$ state, wherein in the expansion can only take one pair of values for $m_{1}=1$ and $m_{2}=\frac{1}{2}$.
+% % $$C_{1 \frac{1}{2}}^{\frac{3}{2} \frac{1}{2}} = 1$$
+% $j$ can take values $\frac{1}{2},\frac{3}{2}$, with $-j \leq m \leq j$, subject to the constraint that $$m=m_{1} + m_{2}$$ \newpage
+Consider the action of $J_{+}$ on the state $| j1,j2;j,m \rangle$,
+\begin{align*}
+    \sqrt{(j-m)(j+m+1)}|j_{1},j_{2};j,m+1\rangle = & \sum_{m_{1} m_{2}} \sqrt{(j_{1}-m_{1})(j_{1}+m_{1}+1)} C^{jm}_{m_{1} m_{2}}| j_{1},j_{2};m_{1}+1,m_{2} \rangle + \\
+    & \sum_{m_{1} m_{2}} \sqrt{(j_{2}-m_{2})(j_{2}+m_{2}+1)} C^{jm}_{m_{1} m_{2}}| j_{1},j_{2};m_{1},m_{2}+1 \rangle
+\end{align*}
+Using the orthonormality of the basis kets and the definition of the Clebsch-Gordan coefficients,
+$$ \sqrt{(j-m)(j+m+1)} C^{j \, m+1}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{(j_{1}-m^{\prime}_{1}+1)(j_{1}+m^{\prime}_{1})} C^{j \, m}_{m^{\prime}_{1}-1 \, m^{\prime}_{2}} + \sqrt{(j_{2}-m^{\prime}_{2}+1)(j_{2}+m^{\prime}_{2})} C^{j \, m}_{m^{\prime}_{1} \, m^{\prime}_{2}-1}$$
+Similarly,
+$$ \sqrt{(j+m)(j-m+1)} C^{j \, m-1}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{(j_{1}+m^{\prime}_{1}+1)(j_{1}-m^{\prime}_{1})} C^{j \, m}_{m^{\prime}_{1}+1 \, m^{\prime}_{2}} + \sqrt{(j_{2}+m^{\prime}_{2}+1)(j_{2}-m^{\prime}_{2})} C^{j \, m}_{m^{\prime}_{1} \, m^{\prime}_{2}+1}$$
+\section*{Calculation for $j=\frac{3}{2}$}
+\subsection*{$m=\pm \frac{3}{2}$}
+This state can only be obtained when $(m_{1},m_{2})=(\pm 1, \pm \frac{1}{2})$. Therefore, 
+$$C^{\frac{3}{2} \,  \frac{3}{2}}_{m_{1}m_{2}} = \delta_{m_{1} ,1}\delta_{m_{2}, \frac{1}{2}}$$
+$$C^{\frac{3}{2} \,  -\frac{3}{2}}_{m_{1}m_{2}} = \delta_{m_{1} ,-1}\delta_{m_{2}, -\frac{1}{2}}$$
+\subsection*{$m=\frac{1}{2}$}
+Since, the Clebsch-gordan coefficients are known for $m=\frac{3}{2}$, using the already obtained relation:
+$$ \sqrt{(\frac{3}{2}+\frac{3}{2})(\frac{3}{2}-\frac{3}{2}+1)} C^{\frac{3}{2} \, \frac{3}{2}-1}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{(1+m^{\prime}_{1}+1)(1-m^{\prime}_{1})} C^{\frac{3}{2} \, \frac{3}{2}}_{m^{\prime}_{1}+1 \, m^{\prime}_{2}} + \sqrt{(\frac{1}{2}+m^{\prime}_{2}+1)(\frac{1}{2}-m^{\prime}_{2})} C^{\frac{3}{2} \, \frac{3}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}+1}$$
+Simplifying,
+$$ \sqrt{3} C^{\frac{3}{2} \, \frac{1}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{2}\delta_{m_{1}^{\prime} ,0}\delta_{m^{\prime}_{2}, \frac{1}{2}}  + \delta_{m^{\prime}_{1} ,1}\delta_{m^{\prime}_{2},-\frac{1}{2}}$$
+\subsection*{$m=-\frac{1}{2}$}
+Since, the Clebsch-gordan coefficients are known for $m=-\frac{3}{2}$, using the already obtained relation:
+$$ \sqrt{(\frac{3}{2}--\frac{3}{2})(\frac{3}{2}+-\frac{3}{2}+1)} C^{\frac{3}{2} \, \left(-\frac{3}{2}+1\right)}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{(1-m^{\prime}_{1}+1)(1+m^{\prime}_{1})} C^{\frac{3}{2} \, -\frac{3}{2}}_{m^{\prime}_{1}-1 \, m^{\prime}_{2}} + \sqrt{(\frac{1}{2}-m^{\prime}_{2}+1)(\frac{1}{2}+m^{\prime}_{2})} C^{\frac{3}{2} \, -\frac{3}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}-1}$$
+Simplifying,
+$$ \sqrt{3} C^{\frac{3}{2} \, -\frac{1}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{2}\delta_{m_{1}^{\prime} ,0}\delta_{m^{\prime}_{2}, -\frac{1}{2}}  + \delta_{m^{\prime}_{1} ,-1}\delta_{m^{\prime}_{2}, \frac{1}{2}}$$
+\section*{Calculation for $j=\frac{1}{2}$}
+\subsection*{$m=\frac{1}{2}$}
+This state can be constructed by the superposition of $|1,-\frac{1}{2}\rangle$ and $|0,\frac{1}{2}\rangle$. By convention, the Clebsch-Gordan coefficients are taken to be orthonormal, which in turn implies from:
+$$|C^{\frac{1}{2} \, \frac{1}{2}}_{1 \, -\frac{1}{2}}|^{2} + |C^{\frac{1}{2} \, \frac{1}{2}}_{0 \, \frac{1}{2}}|^{2}=1 \, , $$ that
+$$C^{\frac{1}{2} \, \frac{1}{2}}_{1 \, -\frac{1}{2}} = \text{cos} \, \theta$$
+$$C^{\frac{1}{2} \, \frac{1}{2}}_{0 \, \frac{1}{2}} = \text{sin} \, \theta$$
+Consider the action of $J_{+}$ on the state in discussion. 
+$$ \sqrt{(\frac{1}{2}-\frac{1}{2})(\frac{1}{2}+\frac{1}{2}+1)} C^{\frac{1}{2} \, \frac{1}{2}+1}_{m^{\prime}_{1} \, m^{\prime}_{2}} =\sqrt{(1-m^{\prime}_{1}+1)(1+m^{\prime}_{1})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1}-1 \, m^{\prime}_{2}} + \sqrt{(\frac{1}{2}-m^{\prime}_{2}+1)(\frac{1}{2}+m^{\prime}_{2})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}-1}$$ 
+Simplifying,
+$$ 0 = \sqrt{(1-m^{\prime}_{1}+1)(1+m^{\prime}_{1})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1}-1 \, m^{\prime}_{2}} + \sqrt{(\frac{1}{2}-m^{\prime}_{2}+1)(\frac{1}{2}+m^{\prime}_{2})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}-1}$$
+Now, let $m^{\prime}_{1}=1$ and $m^{\prime}_{2}=\frac{1}{2}$. Substituting in the above equation,
+\begin{align*}
+    0 & = \sqrt{(1-1+1)(1+1)} C^{\frac{1}{2} \, \frac{1}{2}}_{1-1 \, \frac{1}{2}} + \sqrt{(\frac{1}{2}-\frac{1}{2}+1)(\frac{1}{2}+\frac{1}{2})} C^{\frac{1}{2} \, \frac{1}{2}}_{1 \, \frac{1}{2}-1} \\ 
+    & = \sqrt{2} \text{sin} \, \theta + \text{cos} \, \theta \\
+    \implies \text{tan} \, \theta & = -\frac{1}{\sqrt{2}} \\
+    \implies \text{sin} \, \theta & = \pm \sqrt{\frac{1}{3}} \\
+    \implies \text{cos} \, \theta & = \mp \sqrt{\frac{2}{3}} \\
+\end{align*}
+Without loss of generality, I choose one sign. Therefore,
+$$C^{\frac{1}{2} \, \frac{1}{2}}_{m_{1} m_{2}} = \sqrt{\frac{2}{3}} \delta_{m_{1},1}\delta_{m_{2},-\frac{1}{2}} - \sqrt{\frac{1}{3}}\delta_{m_{1},0}\delta_{m_{2},\frac{1}{2}}$$
+\subsection*{$m=-\frac{1}{2}$}
+Here, although an analogous calculation to the previous sub-section is possible, we choose to use the operation of $J_{-}$ on the $m=\frac{1}{2}$ state, to preserve the sign-convention adopted.
+$$ \sqrt{(\frac{1}{2}+\frac{1}{2})(\frac{1}{2}-\frac{1}{2}+1)} C^{\frac{1}{2} \, \frac{1}{2}-1}_{m^{\prime}_{1} \, m^{\prime}_{2}} = \sqrt{(1+m^{\prime}_{1}+1)(1-m^{\prime}_{1})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1}+1 \, m^{\prime}_{2}} + \sqrt{(\frac{1}{2}+m^{\prime}_{2}+1)(\frac{1}{2}-m^{\prime}_{2})} C^{\frac{1}{2} \, \frac{1}{2}}_{m^{\prime}_{1} \, m^{\prime}_{2}+1}$$
+Only non-zero values occur when either $(m^{\prime}_{1},m^{\prime}_{2})=(-1,\frac{1}{2})$ or $(m^{\prime}_{1},m^{\prime}_{2})=(0,-\frac{1}{2})$
+Therefore, 
+$$ C^{\frac{1}{2} \, -\frac{1}{2}}_{-1 \,\frac{1}{2}} = \sqrt{2} C^{\frac{1}{2} \, \frac{1}{2}}_{0 \, \frac{1}{2}} + \sqrt{(\frac{1}{2}+\frac{1}{2}+1)(\frac{1}{2}-\frac{1}{2})} C^{\frac{1}{2} \, \frac{1}{2}}_{-1 \, \frac{3}{2}} = -\sqrt{\frac{2}{3}}$$
+Similarly,
+$$ C^{\frac{1}{2} \, -\frac{1}{2}}_{0 \,-\frac{1}{2}} = \sqrt{\frac{1}{3}}$$
+Hence,
+$$C^{\frac{1}{2} \, -\frac{1}{2}}_{m_{1} m_{2}} = -\sqrt{\frac{2}{3}} \delta_{m_{1},-1}\delta_{m_{2},\frac{1}{2}} + \sqrt{\frac{1}{3}}\delta_{m_{1},0}\delta_{m_{2},-\frac{1}{2}}$$
+\end{document}

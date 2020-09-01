@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1 in}
+
+
+\title{Assignment 4}
+\author{Mytraya Gattu, Roshni Singh, Ramakant Pal\\ 180050032, 18B030020, 180260028}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+Under the infintesimal transformation, $x^{i}$ and $p^{i}$ change as:
+$$\tilde{x}^{i}=x^{i}+\epsilon \frac{\partial g(\bar{x},\bar{p})}{\partial p^{i}}$$
+$$\tilde{p}^{i}=p^{i}-\epsilon \frac{\partial g(\bar{x},\bar{p})}{\partial x^{i}}$$
+Taking $g(\bar{x},\bar{p})$ to be $H(\bar{x},\bar{p})$, and from the equations of motion
+$$\dot{p}^{i} = -\frac{\partial H(\bar{x},\bar{p})}{\partial x^{i}}$$
+$$\dot{x}^{i} = \frac{\partial H(\bar{x},\bar{p})}{\partial p^{i}}$$
+the transformed co-ordinates are:
+$$\tilde{x}^{i}=x^{i}+\epsilon \dot{x}^{i} = x^{i}(t + \epsilon)$$
+$$\tilde{p}^{i}=p^{i}-\epsilon \left(-\dot{p}^{i}\right) = p^{i}+\epsilon \dot{p}^{i} = p^{i}(t+\epsilon)$$
+Hence,this transformation corresponds to a translation in time. 
+
+\end{document}
